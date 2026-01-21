@@ -32,11 +32,34 @@ export function taskReducer(state: TaskStateModel, action: TaskActionModel): Tas
                     }
                     return task;
                 }),
+            };
+        }
 
+        case TaskActionTypes.COMPLETE_TASK: {
+            return {
+                ...state,
+                activeTask: null,
+                secondsRemaining: 0,
+                formatedSecondsRemaining: '00:00',
+                tasks: state.tasks.map(task => {
+                    if (state.activeTask && state.activeTask.id === task.id) {
+                        return { ...task, completeDate: Date.now()};
+                    }
+                    return task;
+                }),
             };
         }
         case TaskActionTypes.RESET_STATE: {
             return state;
+        }
+        case TaskActionTypes.COUNT_DOWN: {
+            return {
+                ...state,
+                secondsRemaining: action.payload.secondsRemaining,
+                formatedSecondsRemaining: formatSecondsToMinutes(
+                    action.payload.secondsRemaining,              
+                ),
+            };
         }
     }
     
