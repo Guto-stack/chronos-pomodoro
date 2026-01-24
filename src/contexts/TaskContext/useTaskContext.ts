@@ -4,5 +4,13 @@ import { TaskContext } from "./taskContext";
 
 
 export function useTaskContext() {
-    return useContext(TaskContext);
+    const context = useContext(TaskContext);
+
+    if(!context){
+        throw new Error(
+            "useTaskContext deve ser usado dentro de TaskContextProvider"
+        );
+    }
+
+    return context;
 }
