@@ -1,55 +1,62 @@
-:root{
-    --gray-100: #dedad5;
-    --gray-200: #d5d0c8;
-    --gray-300: #ccc7c0;
-    --gray-400: #c4bdb5;
-    --gray-500: #bbb3aa;
-    --gray-600: #b2a99f;
-    --gray-700: #aaa094;
-    --gray-800: #A19689;
-    --gray-900: #734F24;
+:root {
+  --gray-100: #020617; 
+  --gray-200: #020617;
+  --gray-300: #020617;
+  --gray-400: #020617;
+  --gray-500: #020617;
+  --gray-600: #020617;
+  --gray-700: #020617;
+  --gray-800: #020617;
+  --gray-900: #020617;
 
-    --primary-light: #cc99ff;
-    --primary: #9966ff;
-    --primary-dark: #6633ff;
+  --primary-light: #93C5FD;
+  --primary: #3B82F6;       
 
-    --link-color: #9966ff;
-    --link-hover: #6633ff;
+  --link-color: #3B82F6;
+  --link-hover: #1E3A8A;
 
-    --sucess: #00b300;
-    --warning: #ffcc00;
-    --error: #ff3300;
-    --info: #0099ff;
+  
+  --sucess: #22C55E;
+  --warning: #FACC15;
+  --error: #EF4444;
+  --info: #22D3EE; 
 
-    --text-over-primary: #90A19D;
-    --text-over-primary-dark: #dedad5;
-    --text-over-primary-light: #91897e;
-    --text-over-sucess: #91897e;
-    --text-over-warning: #91897e;
-    --text-over-error: #dedad5;
-    --text-over-info: #91897e;
+  --text-over-primary: #F8FAFC;
+  --text-over-primary-dark: #F8FAFC;
+  --text-over-primary-light: #0F172A;
 
-    --text-default: #dedad5;
-    --text-muted: #ccc7c0;
+  --text-over-sucess: #052E16;
+  --text-over-warning: #422006;
+  --text-over-error: #FEF2F2;
+  --text-over-info: #083344;
 
-    --disabled: #aaa094;
-    --text-disabled: #c4bdb5;
+
+   --text-default: #E5E7EB;
+  --text-muted: #94A3B8;
+
+  --disabled: #475569;
+  --text-disabled: #64748B;
 }
 
 :root[data-theme='light'] {
-    --gray-100: #734F24;
-    --gray-200: #A19689;
-    --gray-300: #aaa094;
-    --gray-400: #b2a99f;
-    --gray-500: #bbb3aa;
-    --gray-600: #c4bdb5;
-    --gray-700: #ccc7c0;
-    --gray-800: #d5d0c8;
-    --gray-900: #dedad5;
+  --gray-100: #F8FAFC; 
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A; 
 
-    --text-default: #020001;
-    --text-muted: #340016;
 
-    --link-color: #9966ff;
-    --link-hover: #6633ff;
+  --text-default: #334155; 
+  --text-muted: #334155;
+
+  --link-color: #1E3A8A;
+  --link-hover: #1E40AF;
 }
+
+
+
+
