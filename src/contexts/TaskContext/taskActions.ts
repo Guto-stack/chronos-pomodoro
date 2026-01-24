@@ -1,48 +1,43 @@
-//useReducer <- hook do React que recebe um reducer e um estado atual
-// reducer <- função que recebe o estado atual e uma ação e retorna o novo estado
-// state <- o estado atual
-// action <- ação disparada, geralmente é um objeyo com o type e opcionalmente payload
-// type <- o tipo da ação, geralmente uma string
-//payload <- os dados extras enviados juntos com a action, se necessario para atualizar o  estado
-
-
-import type { TaskModel } from "../../models/TaskModel"
+import type { TaskModel } from "../../models/TaskModel";
 import type { TaskStateModel } from "../../models/TaskStateModel";
 
-export enum TaskActionTypes {
-    START_TASK = 'START_TASK',
-    INTERRUPT_TASK = 'INTERRUPT_TASK',
-    RESET_STATE = 'RESET_STATE',
-    COUNT_DOWN = 'COUNT_DOWN', 
-    COMPLETE_TASK = 'COMPLETE_TASK',
-    CHANGE_SETTINGS= 'CHANGE_SETTINGS'
-}
+export const TaskActionTypes = {
+  START_TASK: 'START_TASK',
+  INTERRUPT_TASK: 'INTERRUPT_TASK',
+  RESET_STATE: 'RESET_STATE',
+  COUNT_DOWN: 'COUNT_DOWN',
+  COMPLETE_TASK: 'COMPLETE_TASK',
+  CHANGE_SETTINGS: 'CHANGE_SETTINGS',
+} as const;
 
-    export type TaskActionsWithPayLoad = 
-    {
-        type: TaskActionTypes.START_TASK; 
-        payload: TaskModel;
+export type TaskActionType =
+  typeof TaskActionTypes[keyof typeof TaskActionTypes];
+
+export type TaskActionsWithPayload =
+  | {
+      type: typeof TaskActionTypes.START_TASK;
+      payload: TaskModel;
     }
-|   {
-        type: TaskActionTypes.COUNT_DOWN; 
-        payload: {secondsRemaining: number};
+  | {
+      type: typeof TaskActionTypes.COUNT_DOWN;
+      payload: { secondsRemaining: number };
     }
-|   {
-        type: TaskActionTypes.CHANGE_SETTINGS; 
-        payload: TaskStateModel['config'];
+  | {
+      type: typeof TaskActionTypes.CHANGE_SETTINGS;
+      payload: TaskStateModel['config'];
     };
 
-    export type TaskActionWithoutPayLoad =
-|   {
-        type: TaskActionTypes.INTERRUPT_TASK; 
+export type TaskActionsWithoutPayload =
+  | {
+      type: typeof TaskActionTypes.INTERRUPT_TASK;
     }
-|   {
-        type: TaskActionTypes.RESET_STATE; 
+  | {
+      type: typeof TaskActionTypes.RESET_STATE;
     }
-|   {
-        type: TaskActionTypes.COMPLETE_TASK; 
+  | {
+      type: typeof TaskActionTypes.COMPLETE_TASK;
     };
 
-    export type TaskActionModel =
-    | TaskActionsWithPayLoad
-    | TaskActionWithoutPayLoad;
+export type TaskActionModel =
+  | TaskActionsWithPayload
+  | TaskActionsWithoutPayload;
